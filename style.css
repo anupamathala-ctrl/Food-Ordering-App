@@ -1,0 +1,290 @@
+:root {
+    --bg-color: #f7edea; /* Light pink/beige background */
+    --logo-color: #a03c4a; /* Deep red/maroon for logo */
+    --button-color: #b7a192; /* Muted brown for buttons */
+    --text-color: #4a4a4a; /* Darker text */
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: Arial, sans-serif; /* Use a common font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.splash-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px; /* Constraints for a mobile-like view */
+    width: 90%;
+}
+
+/* --- Logo and Slogan Styling --- */
+
+.logo-text {
+    /* You would ideally use an image for the stylized logo */
+    font-size: 5rem; 
+    color: var(--logo-color);
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.resturant-text {
+    font-size: 1rem;
+    vertical-align: top;
+}
+
+.slogan {
+    color: var(--logo-color);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 60px; /* Space between slogan and buttons */
+}
+
+
+/* --- Button Styling --- */
+
+.button-group {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 20px; /* Space between buttons */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login {
+    background-color: var(--button-color);
+    color: #fff;
+}
+
+.btn-signup {
+    background-color: var(--button-color);
+    color: #fff;
+}
+
+/* Darker button background for the top (Log in) button for contrast */
+.btn-login {
+    background-color: #9f8c81; 
+}
+
+/* --- Registration Form Specific Styles --- */
+
+.register-container {
+    background-color: var(--bg-color); /* Uses the splash screen background */
+    padding: 30px;
+    width: 90%;
+    max-width: 400px; /* Constrain width for mobile-like appearance */
+    margin: auto; /* Center the container */
+}
+
+.register-container label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: var(--text-color); /* Darker text */
+    font-weight: bold;
+}
+
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box; /* Include padding in the element's total width/height */
+    font-size: 1rem;
+    /* Optional: add a slight shadow or border to match the image */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+.register-btn {
+    width: 100%;
+    padding: 18px 0;
+    margin-top: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    
+    /* Default button style (Muted brown/beige, same as splash buttons) */
+    background-color: var(--button-color); 
+    
+    /* Transition for smooth color change */
+    transition: background-color 0.3s ease; 
+}
+
+/* Style for the activated state (the target color) */
+.register-btn.active {
+    background-color: #9B2E41 !important; /* The required dark red color */
+}
+
+/* Style for the initial disabled state */
+.register-btn[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* --- Login Page Specific Styles --- */
+
+.login-container {
+    background-color: var(--bg-color); 
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.logo-header {
+    text-align: center;
+    margin-bottom: 50px; /* Space between logo group and the form */
+}
+
+/* Inherit logo and slogan styles from the splash screen */
+/* .logo-text, .resturant-text, .slogan styles remain in the global section */
+
+
+/* Form Field Styling (similar to Register 1.png) */
+
+.login-container label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+/* Log In Button Style */
+
+.login-btn {
+    width: 100%;
+    padding: 18px 0;
+    margin-top: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    
+    /* Default button style (Muted brown/beige, same as splash buttons) */
+    background-color: var(--button-color); 
+    
+    /* Transition for smooth color change */
+    transition: background-color 0.3s ease; 
+}
+
+/* Style for the activated state (the required dark red color) */
+.login-btn.active {
+    background-color: #9B2E41 !important;
+}
+
+/* Style for the initial disabled state */
+.login-btn[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Desktop Adjustment (Reuse the desktop media query from previous steps) */
+@media (min-width: 768px) {
+    .login-container {
+        /* Center form vertically and horizontally on desktop */
+        margin: 5vh auto 0 auto; 
+    }
+}
+
+/* --- Branch Selection Page Specific Styles --- */
+
+.branch-container {
+    background-color: var(--bg-color); /* Uses the light pink/beige background */
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 450px; /* Constrain slightly wider than forms for better button fit */
+    margin: auto;
+}
+
+.branch-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4a4a4a; /* Darker text */
+    margin-bottom: 40px;
+    text-align: left; /* Aligned left, as seen in the image */
+}
+
+.branch-group {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+}
+
+.branch-btn {
+    display: block;
+    width: 100%;
+    padding: 20px 0; /* Tall padding for large, easy-to-tap buttons */
+    border: none;
+    border-radius: 10px; /* Slightly more rounded corners */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff; /* White text */
+    
+    /* The deep red color from the image (similar to the activated button color) */
+    background-color: #9B2E41; 
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.2s;
+}
+
+.branch-btn:hover {
+    background-color: #a03c4a; /* Slightly darker on hover */
+}
+
+
+/* Desktop Adjustment (Responsive Design) */
+@media (min-width: 768px) {
+    .branch-container {
+        /* Center content on a wider screen, increase padding */
+        padding: 60px 40px;
+        margin-top: 5vh;
+    }
+    
+    .branch-header {
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+    }
+    
+    .branch-btn {
+        padding: 25px 0; /* Slightly larger buttons on desktop */
+    }
+}

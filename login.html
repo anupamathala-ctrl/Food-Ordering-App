@@ -1,0 +1,36 @@
+<?php
+// PHP logic can go here (e.g., handling potential session checks)
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Awana Resturant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        
+        <header class="logo-header">
+            <h1 class="logo-text">awana <span class="resturant-text">RESTURANT</span></h1>
+            <p class="slogan">SAVOR THE ART OF FINE DINING.</p>
+        </header>
+
+        <form id="loginForm" method="POST" action="login_process.php">
+            
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" name="email" required>
+            
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required>
+            
+            <button type="submit" id="loginBtn" class="login-btn" disabled>
+                Log In
+            </button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

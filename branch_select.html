@@ -1,0 +1,36 @@
+<?php
+// PHP logic to check if the user is logged in
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    // If not logged in, redirect them back to the login page
+    header("Location: login.php");
+    exit();
+}
+
+// Optional: Retrieve user name to personalize the greeting later
+$userName = $_SESSION['user_name'] ?? 'User';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Branch | Awana Resturant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="branch-container">
+        <h2 class="branch-header">Choose our branch near you!</h2>
+        
+        <div class="branch-group">
+            <a href="order.php?branch=kandy" class="branch-btn">Kandy</a>
+            <a href="order.php?branch=galle" class="branch-btn">Galle</a>
+            <a href="order.php?branch=kalutara" class="branch-btn">Kalutara</a>
+            <a href="order.php?branch=colombo" class="branch-btn">Colombo</a>
+            <a href="order.php?branch=ratnapura" class="branch-btn">Ratnapura</a>
+            <a href="order.php?branch=aluthgama" class="branch-btn">Aluthgama</a>
+            <a href="order.php?branch=moratuwa" class="branch-btn">Moratuwa</a>
+        </div>
+    </div>
+</body>
+</html>
